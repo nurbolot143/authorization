@@ -121,6 +121,11 @@ body {
     display: inline-block !important;
     width: auto;
   }
+
+  @include media(440) {
+    font-size: 11px;
+    line-height: 14px;
+  }
 }
 
 .title {

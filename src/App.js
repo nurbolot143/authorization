@@ -8,7 +8,7 @@ import "./sass/App.scss";
 export const LoggedContext = createContext();
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   return (
     <LoggedContext.Provider value={setIsLogged}>
