@@ -2,14 +2,24 @@ import React, { useContext, useState } from "react";
 
 import { LoggedContext } from "../App";
 
-import video from "../assets/videos/video.mp4";
-
 const Home = () => {
   const setIsLogged = useContext(LoggedContext);
+
+  const [play, setPlay] = useState(false);
 
   const logout = () => {
     setIsLogged(false);
     console.log("logout");
+  };
+
+  const handlePlay = (e) => {
+    if (e.target.paused) {
+      e.target.play();
+      setPlay(true);
+    } else {
+      e.target.pause();
+      setPlay(false);
+    }
   };
 
   return (
@@ -30,7 +40,20 @@ const Home = () => {
           <div className="container">
             <div className="main__wrapper">
               <div className="main__video">
-                <video src={video} controls="controls"></video>
+                <video
+                  src="https://assets.mixkit.co/videos/preview/mixkit-couple-having-breakfast-in-the-forest-43175-large.mp4"
+                  onClick={handlePlay}
+                ></video>
+
+                <div
+                  className={
+                    play
+                      ? "main__videoBtn"
+                      : "main__videoBtn main__videoBtn-play"
+                  }
+                >
+                  <span className={play ? "" : "play"}></span>
+                </div>
               </div>
             </div>
           </div>
