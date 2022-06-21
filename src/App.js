@@ -1,8 +1,19 @@
+import { createContext, useState } from "react";
+
+import Authorization from "./components/Authorization";
+import Home from "./components/Home";
+
+import "./sass/App.scss";
+
+export const LoggedContext = createContext();
+
 function App() {
+  const [isLogged, setIsLogged] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">App</header>
-    </div>
+    <LoggedContext.Provider value={setIsLogged}>
+      <div className="App">{isLogged ? <Home /> : <Authorization />}</div>
+    </LoggedContext.Provider>
   );
 }
 
