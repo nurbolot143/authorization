@@ -20,37 +20,77 @@
 
   &__video {
     position: relative;
-    padding: 0 30px;
+    padding: 0 30px 30px 30px;
     width: 100%;
+    max-height: 720px;
     overflow: hidden;
 
-    button {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: $accent-color;
+    &:hover .main__videoBtn {
+      opacity: 1;
+    }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      span {
-        width: 40px;
-        height: 40px;
-        svg {
-          height: 100%;
-          width: 100%;
-        }
-      }
+    @include media(440) {
+      padding: 0 15px 15px 15px;
     }
   }
 
   video {
     width: 100%;
     z-index: -1;
+  }
+
+  &__videoBtn {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: $accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+
+    &-play {
+      opacity: 1;
+    }
+
+    @include media(912) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include media(440) {
+      width: 25px;
+      height: 25px;
+    }
+
+    span {
+      width: 40px;
+      height: 40px;
+      background: url("../../assets/icons/pause.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include media(912) {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include media(440) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .play {
+    background: url("../../assets/icons/play.svg") no-repeat;
+    background-position: right 11% center;
+    background-size: contain;
   }
 }
