@@ -1,0 +1,24 @@
+@import "../media";
+@import "../vars";
+
+.success {
+  &__wrapper {
+    max-width: 755px;
+    padding: 0 30px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 12px 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include media(440) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

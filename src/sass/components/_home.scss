@@ -1,0 +1,20 @@
+@import "../media";
+@import "../vars";
+
+.header {
+  padding: 40px 0;
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.main {
+  &__wrapper {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
